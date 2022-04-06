@@ -1,7 +1,5 @@
 #TempConvert.py
-
 TempStr = input("输入带有符号的温度值：")
-
 if TempStr[-1] in ['F', 'f']:
     C = (eval(TempStr[0:-1]) -32) / 1.8
     print("转换后的温度是{:.2f}C".format(C))
