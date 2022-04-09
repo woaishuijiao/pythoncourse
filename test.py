@@ -1,49 +1,93 @@
-#test.py
-# lt = list()
-# for i in range(5):
-#     lt.append(i)
-# print(lt)
-# lt[1] = "modify"
-# print(lt)
-# lt.insert(1, "add to 2")
-# print(lt)
-# del lt[0]
-# print(lt)
-# del lt[0:3]
-# print(lt)
-# if 0 in lt:
-#     print("0 in lt")
-# else:
-#     print("0 not in lt")
-# lt.append(0)
-# print(lt)
-# print(lt.index(0))
-# print(len(lt))
-# print(max(lt))
-# lt.clear()
-# print(lt)
-s = '''双儿 洪七公 赵敏 赵敏 逍遥子 鳌拜 殷天正 金轮法王 乔峰 杨过 洪七公 郭靖 
-       杨逍 鳌拜 殷天正 段誉 杨逍 慕容复 阿紫 慕容复 郭芙 乔峰 令狐冲 郭芙 
-       金轮法王 小龙女 杨过 慕容复 梅超风 李莫愁 洪七公 张无忌 梅超风 杨逍 
-       鳌拜 岳不群 黄药师 黄蓉 段誉 金轮法王 忽必烈 忽必烈 张三丰 乔峰 乔峰 
-       阿紫 乔峰 金轮法王 袁冠南 张无忌 郭襄 黄蓉 李莫愁 赵敏 赵敏 郭芙 张三丰 
-       乔峰 赵敏 梅超风 双儿 鳌拜 陈家洛 袁冠南 郭芙 郭芙 杨逍 赵敏 金轮法王 
-       忽必烈 慕容复 张三丰 杨逍 令狐冲 黄药师 袁冠南 杨逍 完颜洪烈 殷天正 
-       李莫愁 阿紫 逍遥子 乔峰 逍遥子 完颜洪烈 郭芙 杨逍 张无忌 杨过 慕容复 
-       逍遥子 虚竹 双儿 乔峰 郭芙 黄蓉 李莫愁 陈家洛 杨过 忽必烈 鳌拜 王语嫣 
-       洪七公 韦小宝 阿朱 梅超风 段誉 岳灵珊 完颜洪烈 乔峰 段誉 杨过 杨过 慕容复 
-       黄蓉 杨过 阿紫 杨逍 张三丰 张三丰 赵敏 张三丰 杨逍 黄蓉 金轮法王 郭襄 
-       张三丰 令狐冲 郭芙 韦小宝 黄药师 阿紫 韦小宝 金轮法王 杨逍 令狐冲 阿紫 
-       洪七公 袁冠南 双儿 郭靖 鳌拜 谢逊 阿紫 郭襄 梅超风 张无忌 段誉 忽必烈 
-       完颜洪烈 双儿 逍遥子 谢逊 完颜洪烈 殷天正 金轮法王 张三丰 双儿 郭襄 阿朱 
-       郭襄 双儿 李莫愁 郭襄 忽必烈 金轮法王 张无忌 鳌拜 忽必烈 郭襄 令狐冲 
-       谢逊 梅超风 殷天正 段誉 袁冠南 张三丰 王语嫣 阿紫 谢逊 杨过 郭靖 黄蓉 
-       双儿 灭绝师太 段誉 张无忌 陈家洛 黄蓉 鳌拜 黄药师 逍遥子 忽必烈 赵敏 
-       逍遥子 完颜洪烈 金轮法王 双儿 鳌拜 洪七公 郭芙 郭襄'''
-strList = s.split()
-print(len(strList))
-ls = set(strList)
-print(ls)
-lt = list(ls)
-print(lt)
-print(len(lt))
+#RoseDraw.py
+import turtle as t
+# 定义一个曲线绘制函数
+def DegreeCurve(n, r, d=1):
+    for i in range(n):
+        t.left(d)
+        t.circle(r, abs(d))
+# 初始位置设定
+s = 0.2 # size
+t.setup(450*5*s, 750*5*s)
+t.pencolor("black")
+t.fillcolor("red")
+t.speed(100)
+t.penup()
+t.goto(0, 900*s)
+t.pendown()
+# 绘制花朵形状
+t.begin_fill()
+t.circle(200*s,30)
+DegreeCurve(60, 50*s)
+t.circle(200*s,30)
+DegreeCurve(4, 100*s)
+t.circle(200*s,50)
+DegreeCurve(50, 50*s)
+t.circle(350*s,65)
+DegreeCurve(40, 70*s)
+t.circle(150*s,50)
+DegreeCurve(20, 50*s, -1)
+t.circle(400*s,60)
+DegreeCurve(18, 50*s)
+t.fd(250*s)
+t.right(150)
+t.circle(-500*s,12)
+t.left(140)
+t.circle(550*s,110)
+t.left(27)
+t.circle(650*s,100)
+t.left(130)
+t.circle(-300*s,20)
+t.right(123)
+t.circle(220*s,57)
+t.end_fill()
+# 绘制花枝形状
+t.left(120)
+t.fd(280*s)
+t.left(115)
+t.circle(300*s,33)
+t.left(180)
+t.circle(-300*s,33)
+DegreeCurve(70, 225*s, -1)
+t.circle(350*s,104)
+t.left(90)
+t.circle(200*s,105)
+t.circle(-500*s,63)
+t.penup()
+t.goto(170*s,-30*s)
+t.pendown()
+t.left(160)
+DegreeCurve(20, 2500*s)
+DegreeCurve(220, 250*s, -1)
+# 绘制一个绿色叶子
+t.fillcolor('green')
+t.penup()
+t.goto(670*s,-180*s)
+t.pendown()
+t.right(140)
+t.begin_fill()
+t.circle(300*s,120)
+t.left(60)
+t.circle(300*s,120)
+t.end_fill()
+t.penup()
+t.goto(180*s,-550*s)
+t.pendown()
+t.right(85)
+t.circle(600*s,40)
+# 绘制另一个绿色叶子
+t.penup()
+t.goto(-150*s,-1000*s)
+t.pendown()
+t.begin_fill()
+t.rt(120)
+t.circle(300*s,115)
+t.left(75)
+t.circle(300*s,100)
+t.end_fill()
+t.penup()
+t.goto(430*s,-1070*s)
+t.pendown()
+t.right(30)
+t.circle(-600*s,35)
+t.done()
+
